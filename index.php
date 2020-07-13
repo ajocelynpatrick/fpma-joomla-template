@@ -1,16 +1,20 @@
+<?php
+defined('_JEXEC') or die;
+// Add JavaScript Frameworks
+JHtml::_('bootstrap.framework');
+// ne pas charger le correctif
+JHtmlBootstrap::loadCss($includeMaincss = true );
+?>
 <!DOCTYPE html>
 <html lang="en">
     <HEAD>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="Minoa an'i Jesosy Tompo dia ho vonjena ianao sy ny ankohonanao"/>
-        <link rel="stylesheet" type="text/css" href="vendor/css/normalize.css"/>
-        <link rel="stylesheet" type="text/css" href="vendor/css/grid.css"/>
-        <!--link rel="stylesheet" type="text/css" href="vendor/css/all.min.css"/-->
-        <link rel="stylesheet" type="text/css" href="vendor/css/all.min.css"/>
-        <link rel="stylesheet" type="text/css" href="vendor/css/animate.min.css"/>
-        <link rel="stylesheet" type="text/css" href="resources/css/style.css"/>
-        <link rel="stylesheet" type="text/css" href="resources/css/queries.css"/>
+        <jdoc:include type="head" />
+        <!--[if lt IE 9]>
+            <script src="<?php echo $this->baseurl ?>/media/jui/js/html5.js"></script>
+        <![endif]-->
         <link href="https://fonts.googleapis.com/css?family=Lato:100,300,300i,400&display=swap" rel="stylesheet">
         <link rel="apple-touch-icon" sizes="180x180" href="resources/favicons/apple-touch-icon.png">
         <link rel="icon" type="image/png" sizes="32x32" href="resources/favicons/favicon-32x32.png">
@@ -19,7 +23,6 @@
         <link rel="mask-icon" href="resources/favicons/safari-pinned-tab.svg" color="#5bbad5">
         <meta name="msapplication-TileColor" content="#da532c">
         <meta name="theme-color" content="#ffffff">
-        <title>FPMA Cergy</title>
     </HEAD>
     <body>
         <header>
