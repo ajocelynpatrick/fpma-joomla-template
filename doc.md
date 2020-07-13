@@ -21,3 +21,6 @@ Copier également le code
         <script src="<?php echo $this->baseurl ?>/media/jui/js/html5.js"></script>
     <![endif]-->
 ```
+Pour l'instant, je vais également remplacer toute la partie `<body>` de la page `index.php` pour faciliter l'insertion des modules et des composants.
+
+Le contenu de notre fichier `index.php` est maintenant selon le commit "header et contenu minimum"
