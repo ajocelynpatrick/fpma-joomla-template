@@ -24,3 +24,9 @@ Copier également le code
 Pour l'instant, je vais également remplacer toute la partie `<body>` de la page `index.php` pour faciliter l'insertion des modules et des composants.
 
 Le contenu de notre fichier `index.php` est maintenant selon le commit "header et contenu minimum"
+
+# 4. Arrangement layout du site
+
+Nous allons adapter notre layout minimum à notre vrai template tel que nous l'avonc créé en HTML5/CSS3.
+Nous avons plusieurs sections dans le design de notre site. Chaque section est un `row` (ou ligne au sens boostrap)
+Pour le moment, le plus simple est de mettre un div dans chaque section
