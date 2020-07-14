@@ -30,58 +30,61 @@ JHtmlBootstrap::loadCss($includeMaincss = true );
             <nav>
                 <div class="row">
                     <img src="resources/img/fpmalogo%20cergy.png" alt="fpma logo" class="logo"/>
-                    <ul class="main-nav js--main-nav">
-                        <li> <a href="#bible_texte">Accueil</a></li>
-                        <li><a href="#bible">Etude biblique</a></li>
-                        <li><a href="#sampana">Section</a></li>
-                        <li><a href="#responsables">Contact</a></li>
-                    </ul>
+                    <jdoc:include type="modules" name="nav" style="html5" />
                     <a class="mobile-nav-icon js--nav-icon"><i class="fas fa-bars"></i></a>
                 </div>
             </nav>
             <div class="bible-text-box" id="bible_texte">
-                <h1>"fa araka ny fahamasinan'ilay niantso anareo, dia aoka mba ho masina koa ianareo amin'ny fitondran-tena          rehetra"<br>
-                    I Petera 1:15
-                </h1>
+                <jdoc:include type="modules" name="texte-banner" style="html5" />
                 <a class= "btn btn-full js--scroll-to-plans" href="#">Ecouter en direct</a>
                 <a class="btn btn-ghost js--scroll-to-start" href="#">Annonce</a>
             </div>
         </header>
+        
         <!-- section etude biblique -->
         <section class="section-features js--section-features" id="bible">
-           <div class="row">
-            Section etude biblique
-           </div>
-           
+            <div class="row">
+                <jdoc:include type="modules" name="pericope" style="html5" />
+            </div>        
         </section>
         <!-- section gallery photo sampana -->
         <section class="section-meals" id="sampana">
             <div class="row"> 
-                Section gallery photo sampana 
+                <jdoc:include type="modules" name="photos-choisies" style="html5" /> 
             </div>   
         </section>
         <!-- section etude biblique et formation -->
         <section class="section-step">
-            <div class="row">Section etude biblique</div>
+            <div class="row">
+                <jdoc:include type="modules" name="etude-biblique" style="html5" /> 
+            </div>
         </section>
         <!-- section responsable fiangonana -->
         <section class="section-responsable" id="responsables">
-            <div class="row"> Section responsable </div>
+            <div class="row"> 
+                <jdoc:include type="modules" name="responsables" style="html5" /> 
+            </div>
         </section>
         <!-- section verset du mois -->class
         <section class="section-verset-du-mois">
-            <div class="row">Verset du mois</div>
+            <div class="row">
+                <jdoc:include type="modules" name="versets-du-mois" style="html5" /> 
+            </div>
         </section>
         <!-- membre du bureau -->
         <section class="section-membre js--section-plans">
-            <div class="row">Section membres du bureau</div>
+            <div class="row">
+                <jdoc:include type="modules" name="bureau" style="html5" /> 
+            </div>
         </section>
         <!-- maps et formulaire contact -->
         <section class="section-form map-box"> 
-            <div class="row">Contact</div> 
+            <div class="row">
+                <jdoc:include type="modules" name="" style="html5" /> 
+            </div> 
         </section>
         <footer>
-            <div class="row">Footer va ici</div>
+                <jdoc:include type="modules" name="map" style="html5" /> 
         </footer>
     </body>
 </html>
