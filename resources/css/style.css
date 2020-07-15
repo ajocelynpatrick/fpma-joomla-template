@@ -1,0 +1,784 @@
+/******************************************************
+CONFIGURATION ENVIRONNEMENT BASIQUE
+********************************************************/
+
+*{
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+html,body{
+    background-color: #FFF;
+    color: #555;
+    /*première font est Lato et si non disponible Arial et sinon n'importe quel sans-serif fera l'affaire*/
+    font-family: 'Lato','Arial', sans-serif;
+    font-weight: 300;
+    font-size: 20px;
+    text-rendering: optimizeLegibility; /*lecture facile*/
+    overflow-x: hidden;
+}
+
+
+
+/********************************************************************
+
+COMPOSANTS REUTILISABLES
+**********************************************************************/
+
+
+/*les contenus seront organisés en rangés qu'on appelera row*/
+.row{
+    max-width: 1140px; /*Largeur max en valeur absolue px*/
+    /*on veut centrer le contenu du row
+    /*pour centrer un conteneur dans un autre conteneur, on met margin-left=auto et margin-right=auto*/
+    margin: 0 auto 0 auto; /*top right bottom left*/
+}
+
+section{
+    padding: 80px 0;
+}
+
+.box{
+    padding: 1%;
+}
+
+/*********************EN TETE***********************/
+
+h1,h2,h3{
+    font-weight: 300;
+    text-transform: uppercase;
+}
+h1{
+    margin-top: 0; /*permet d'enlever l'espace en dessus du header à cause de normalize.css*/
+    margin-bottom: 20px;
+    color: #FFF;
+    font-size: 190%;
+    word-spacing: 3px;
+    letter-spacing: 1px;
+}
+
+h2{
+    font-size: 180%; /*taille en relative(%) pour être responsive à la taille du parent html*/
+    word-spacing: 2px;
+    text-align: center;
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+}
+
+h3{
+    font-size: 110%;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+h2:after{
+    display: block;
+    height: 2px;
+    background-color: #8bc701;
+    content: "";
+    width: 100px;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+
+/***********************PARAGRAPHS*****************/
+.section1-paragraph1{
+    line-height: 140%;
+    width: 70%;
+    margin-left: 15%;
+    margin-right: 15%;
+    text-align: center;
+}
+
+.box p{
+    font-size: 90%;
+    line-height: 145%;
+}
+
+/***************ICONS*************/
+.icon-big{
+    font-size: 200%; /*nahenako kely nenah ny taille ny icon*/
+    display: block;
+    color: #385aa0;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.icon-small{
+    display: inline-block;
+    width: 20px;
+    text-align: left;
+    color: /*#8bc701;*/ #329698;
+    font-size: 65%;
+    line-height: 130%;
+    vertical-align: middle;
+    margin-top: 5px; /*-4px ny valeur teo*/
+    margin-right: 10px; /* espacement droite*/
+}
+
+/********LIENS*************************/
+a:link, a:visited{
+    color: #385aa0;
+    text-decoration: none;
+    /*border-bottom: 1px solid #fedc00;*/
+    -webkit-transition: border-bottom 0.2s, color 0.2s;
+    transition: border-bottom 0.2s, color 0.2s;
+}
+a:hover, a:visited{
+    color#555;
+    border-bottom: 1px solid transparent;
+}
+
+/*************BOUTONS*************/
+
+.btn:link,
+.btn:visited,
+input[type=submit]{
+    display: inline-block;
+    padding: 10px 30px;
+    font-weight: 300;
+    text-decoration: none; /*pour enlever les décorations*/
+    border-radius: 200px;
+    -webkit-transition: background-color 0.2s, border 0.2s, color 0.2s;
+    transition: background-color 0.8s, border 0.8s, color 0.8s;
+    margin-right: 15px;
+}
+
+.btn:active,
+.btn:hover,
+input[type=submit]{
+    background-color: #385aa0;
+}
+
+.btn-full:link,
+.btn-full:visited,
+input[type=submit]{
+    background-color: #385aa0;
+    border: 1px solid #385aa0;
+    color: #fff;
+}
+
+.btn-ghost:link,
+.btn-ghost:visited{
+    border: 1px solid #385aa0;
+    color: #fff /* Je mets mon couleur de text en blanc(#e67e22;)*/
+}
+
+.btn:active,
+.btn:hover,
+input[type=submit]:active,
+input[type=submit]:hover{
+    background-color: #329698;
+}
+
+.btn-full:active,
+.btn-full:hover{
+    border: 1px solid #8bc701;
+}
+
+.btn-ghost:active,
+.btn-ghost:hover{
+    border: 1px solid #8bc701;
+    color: #fff; /*je mets en bleu quand la souris passe*/
+}
+
+/***************************************************************
+
+HEADER
+****************************************************************/
+
+header{
+    background: -webkit-gradient(linear,left top, left bottom,from(rgba(0,0,0,0.7)),to(rgba(0,0,0,0.7))),url(img/bible3.jpg);
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(img/bible3.jpg);
+    background-size: cover;  /*affiche l'image sur toute sa largeur*/
+    background-position: center;
+    height: 100vh;
+    background-attachment: fixed;
+}
+.bible-text-box{
+    position: absolute;
+    width: 1020px;/*1140px;*/
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
+}
+/***********************************
+LOGO
+************************************/
+.logo{
+    height: 100px;
+    width: auto;
+    float: left;
+    margin-top: 20px;
+}
+
+/***********************************
+NAVIGATION
+**************************************/
+
+.main-nav{
+    float: right;
+    list-style: none;
+    margin-top: 55px;
+}
+
+.main-nav li{
+    display: inline;
+    margin-left: 40px;
+}
+
+.main-nav li a{
+    color: #FFF;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 90%;
+}
+
+.main-nav li a:link,
+.main-nav li a:visited{
+    padding: 8px 0;
+    color: #FFF;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 90%;
+    border-bottom: 1px solid transparent;
+    -webkit-transition: border-bottom 0.2s;
+    transition: border-bottom 0.9s;
+}
+
+.main-nav li a:hover,
+.main-nav li a:active{
+    border-bottom: 1px solid #329698;
+}
+
+/** navigation mobile**/
+.mobile-nav-icon{
+    float: right;
+    margin-top: 30px;
+    cursor: pointer;
+    display: none;
+}
+
+.mobile-nav-icon i{
+    font-size: 200%;
+    color: #FFF;
+}
+
+/**sticky class pour jquery**/
+.sticky{
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0px 2px 2px #efefef;
+    z-index: 9999;
+}
+
+.sticky .main-nav{
+    margin-top: 16px;
+}
+
+.sticky .main-nav li a:link,
+.sticky .main-nav li a:visited{
+    padding: 18px 0;
+    color: #555;
+}
+
+/*Modification de la largeur de la ligne souligné pour les menus hover*/
+.sticky .main-nav li a:hover,
+.sticky .main-nav li a:active{
+    border-bottom: 2px solid #329698;
+}
+
+.sticky .logo{
+    display: block;
+    height: 50px;
+    margin-top: 5px;
+}
+
+
+
+/*******************************************************
+FEATURE SECTION
+********************************************************/
+
+.section1-paragraph1{
+    margin-bottom: 30px;
+}
+
+/*******************************************
+MEALS SECTION
+********************************************/
+/* QUESTION:
+
+- faire en sorte que quand la souris passe, l'image passe à 100% (voir la doc de hover)
+IDEE/INSPIRATION: on a déjà fait en sorte que l'image de header soit un peu plus sombre
+DOCUMENTATION: voir transform css / pour mettre une image un peu plus sombre voir linear-gradient*/
+
+/** il y a trop d'espace entre la section d'avant et la section meals-showcase à cause du padding top qu'on a mis dans  section
+Pour enlever cette valeur, nous avons mis une classe section-meals dans la section meals et on va le modifier*/
+.section-meals{
+    padding: 0 0 0 0;
+}
+/* donner un style au div meal-showcase pour :
+    - mettre une largeur à 100% pour remplir toute la page
+    - pour que les listes dans ce div n'affichent pas de symbole
+*/
+.meals-showcase{
+    width: 100%;
+    list-style: none;
+}
+/* donner un style au li dans ce div pour :
+    - afficher le contenu des li en colonne et côte à côte (et non pas en ligne comme actuellement)*/
+
+
+.meals-showcase li{
+    display: block;
+    float: left;
+    width: 25%;
+}
+ /*   - configurer la largeur de chaque image pour que ça remplisse correctement la ligne sur 4 colonnes (il y a déjà 4 images)
+      (idée: jouer sur la largeur)*/
+
+/* formatter les images de chaque élément de la liste (idée rajouter des classes là où il le faut) 
+    et donner des propriétés correctes à cette classe */
+
+/** donner une classe meal-photo aux figure (voir les modifs faites au html)*/
+.meal-photo{
+    width: 100%;
+    margin: 0;
+    /* -2- Faire en sorte que ce dépassement soit caché*/
+    overflow: hidden;
+    background-color: black;
+    
+}
+/* pour formatter les images, il faut formatter les img dans la classe meal-photo */
+.meal-photo img{
+    opacity: 0.4;
+    width: 100%;
+    height: auto;
+    /* 1- modifier le css pour que l'image soit un peu plus zoomé*/
+    -webkit-transform: scale(1.15);
+    transform: scale(1.15);
+}
+/*3- faire en sorte que quand la souris passe, l'image passe à 100%*/
+.meal-photo img:hover{
+    width: 100%;
+    height: auto;
+    -webkit-transform: scale(1.05);
+    transform: scale(1.05);
+    opacity: 0.8;
+    /* faire en sorte que l'animation des images se passe en demi-seconde*/
+    -webkit-transition: opacity 0.5s, -webkit-transform 0.5s;
+    transition: opacity 0.5s, -webkit-transform 0.5s;
+    transition: transform 0.5s, opacity 0.5s;
+    transition: transform 0.5s, opacity 0.5s, -webkit-transform 0.5s;
+}
+
+
+/**********************************************************************************
+MEALS SECTION
+***********************************************************************************/
+/*
+Exercice3: Formater la section "Formation SAP"
+- mettre un espacement entre le titre de la section et son contenu (ex: utiliser margin)
+    + aligner l'image à droite de sa boite et rajouter un espacement droit en pourcentage et le texte à gauche de sa boite et un espacement gauche*/
+
+
+/*on apprend à utiliser les selections sans class
+/*selection du premier fils (le plus à gauche)*/
+.section-step{
+    background-color: #f4f4f4;
+}
+.step-box:first-child{
+    text-align: right;
+    padding-right: 3%;
+    margin-top: 30px;
+}
+/*selection du dernier fils (le plus à droite)*/
+.step-box:last-child{
+    padding-left: 3%;
+    margin-top: 70px;
+}
+/*
+- redimensionner l'image en pourcentage (fournir la bonne taille) (utiliser la class bibleonly)*/
+.bibleonly{
+    width: 40%;
+}
+
+/*
+- Formattage des étapes :
+    + transformer les numéros d'étapes en petit cercle orange et non pas en numéro (pour faire une cercle, on utilisera order et border-radius)
+    + espacer de quelques pixels ( en pourcentage) les bullets/puces et leurs textes*/
+
+.form-step{
+    margin-bottom: 50px;
+}
+
+.form-step:last-of-type{
+    margin-bottom: 80px;
+}
+
+.form-step p{
+    padding-top: 10px;
+}
+
+.form-step div{
+    color: /*#8bc701;*/ #329698;
+    border: 2px solid #329698;
+    display: inline-block; /* ça permet d'afficher les box en ligne mais pas remplir la ligne */
+    border-radius: 50%; /* converti en cercle les carrées */
+    /*à ce moment, le cercle est très aplati*/
+    height: 50px;
+    width: 50px;
+    text-align: center;
+    padding: 5px; /* pour centraliser le texte dans le cercle*/
+    float: left; /* pour mettre le bullet à gauche et le texte à droite*/
+    font-size: 150%;/* jouer avec le font-size pour centraliser le chiffre dans le cercle*/
+    margin-right: 10px; /* marge entre le cercle et le texte*/
+}
+
+
+/*
+- aligner les boutons applications avec le fond de l'image du téléphone (cela ne concerne pas mon site)
+/* formattage des boutons*/
+/*.btn-app img{
+    height: 50px; 
+    width: auto;
+    margin-right: 10px; /* ça permet de mettre plus d'espace entre les deux images
+}*/
+/*
+- un problème d'espacement devrait apparaitre entre la nouvelle section et celle d'avant. Il faut utiliser clearfix pour le résoudre (clear the floats à chaque fois qu'on utilise un float, il faut utiliser clearfix)
+*/
+
+/*enlever les soulignements*/
+
+.btn-link:link{
+    border: 0px;
+}
+
+/**clearfix**/
+.clearfix{
+    zoom:1;
+}
+.clearfix:after{
+    content: '.';
+    clear: both;
+    display: block;
+    height: 0;
+    visibility: hidden;
+}
+
+.section-features .row .col h3{
+    text-align: center;
+}
+.section-features .row .col p{
+    margin-left: 15px;
+    text-align: center;
+}
+
+.form-step p{
+    padding-top: 15px;
+}
+
+/************************************************************
+
+SECTION RESPONSABLE
+*************************************************************/
+
+/*taille des images dans la classe box*/
+
+.box img{
+    width: 100%;
+    height: auto;
+    margin-bottom:  15px;
+}
+
+/** Marge entre les textes en dessous des images*/
+
+.res-feature{
+    margin-bottom: 5px;
+}
+
+.res-feature p{
+    font-size: 15px
+}
+
+/**************************************
+DERNIER VERSEt DU MOIS SECTION
+****************************************/
+
+/* - créer une image de fond pour la section dernier verset du mois ( une image de background existe )*/
+
+
+.section-verset-du-mois{
+    background: -webkit-gradient(linear,left top,left bottom,from(rgba(0, 0, 0, 0.8)),to(rgba(0, 0, 0, 0.8))), url(img/bibles-hero.jpg);
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(img/bibles-hero.jpg);
+    background-size: cover;
+    color: #FFF;
+    background-attachment: fixed; /*permet de fixer le fond et la page bouge*/
+}
+
+/*formatter les balises bloquotes et cite (espacement, texte en italique, line-height,..)*/
+blockquote{
+    padding: 2%;
+    font-style: italic;
+    font-size: 125%;
+    line-height: 145%;
+    position: relative;
+    margin-top: 40px;
+}
+
+/* rejouter des guillemets pour encadrer les textes des quotes des clients à partir du CSS pour qu'on puisse le formatter (inspiration utiliser .bloquote:before fin de mettre le guillemets ouvrant devant le texte du bloquote)*/
+
+blockquote:before{
+    /*content:"\";*/ 
+    content: "\201C";
+    font-size: 400%;
+    /*afficher le guillemet dans une ligne unique(display:block)*/
+    display: block;
+    /*positionnement fixe du caractère*/
+    position: absolute;
+    top: 0px;
+    left: 3px;
+}
+
+cite{
+    font-size: 90%;
+    margin: 25px;
+    display: block;
+}
+
+/* formatter les images dans les balises cite pour apparaitre dans un petit cercle*/
+/* bien aligner l'image avec le nom */
+cite img{
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+    clear: both;
+    vertical-align: middle;
+}
+
+
+
+/******************************************************************
+Membre  SECTION
+*************************************************************/
+/* - mettre une couleur de fond pour la section (un gris comme celle de la section "formation")*/
+.section-membre{
+}
+
+/* formatter les div plan-box (les boites) pour que le fond soit blanc et les coins des boites soient arrondis (utiliser border-radius)
+formatter la largeur des boites pour occuper90% de la largeur allouée*/
+.plan-box{
+    background-color: #FFF;
+    border-radius: 10px;
+    width: 90%;
+    /*voir le resultat et ajuster la marge et ajuster la marge à gauche*/
+    height: 450px;
+    margin-left: 5%;
+    -webkit-box-shadow: 5px 5px 10px #383838;
+    box-shadow: 5px 5px 10px #383838;
+}
+
+/* formatter les div dans chaque plan-box pour former une section claire*/
+
+.plan-box div{
+padding: 15px;
+border-bottom: 1px solid #e8e8e8;
+}
+
+.nom{
+    font-size: 150%;/* je mets la font-size à 150% au lieu de 300% */
+    font-weight: 100%;
+    color: #385aa0;
+}
+
+.plan-box div ul{
+    list-style: none;
+}
+
+.plan-box div ul li{
+    padding: 15px 0;
+}
+
+/* griser un peu le fond de la première section*/
+.plan-box div:first-child{
+    background-color: #eaeaea;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.plan-box div:last-child{
+    /*text-align: center;*/
+    border-bottom: 0;
+}
+
+/******************************************************
+Contact SECTION
+*******************************************************/
+.section-form{
+    background-color: #f4f4f4;
+
+}
+.contact-form{
+    width: 90%;
+    margin: 0 auto;
+}
+
+input[type=text],
+input[type=email],
+select,
+textarea{
+    width: 100%;
+    padding: 7px;
+    border-radius: 5px;
+    border: 1px solid #CCCCCC;
+}
+
+/*mettez la hauteur du textarea à 100px*/
+textarea{
+    height: 100px;
+}
+/*************************************************************
+JUSTE POUR UN DOCUMENT, (je n'ai pas utiliser un checkbox)
+*****************************************************************/
+/* Mettre les espacements autour du checkbox
+input[type=checkbox]{
+    margin: 15px 5px 10px 0px;
+}
+
+/*enlever les couleurs bleus autour des controles quand on les selectionne
+*:focus{
+    outline: none;
+}*/
+
+/** maps */
+
+.map-box{
+    width: 100%;
+    position: relative;
+    padding: 0;
+}
+
+.map{
+    width: 50%;
+    height: 660px;
+    z-index: 0;
+}
+
+.form-box{
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    background-color: rgba(255,255,255,0.8);
+    z-index: 10;
+    height: 660px;
+    padding-top: 40px;
+    width:50%;
+}
+
+/**************************************************************
+Footer SECTION
+****************************************************************/
+/*Mettre une couleur de fond sombre pour le footer entier*/
+footer{
+    background-color:#333333;
+    padding: 40px;
+    font-size: 80%;
+}
+.footer-nav{
+    float: left;
+    list-style:none;
+}
+/*.footer-nav li a{
+     color: #385aa0;
+}*/
+
+.social-links{
+    float:right;
+    list-style:none;
+}
+.footer-nav li,
+.social-links li{
+    display:inline-block;
+    margin-right:20px;
+}
+.footer-nav li:last-child,
+.social-links li:last-child{
+    margin-right: 0;
+}
+
+.footer-nav li a:visited,
+.footer-nav li a:link,
+.social-links li a:visited,
+.social-links li a:link{
+    text-decoration: none;
+    border: 0;
+    color: #888;
+    -webkit-transition: color 0.2s;
+    transition: color 0.2s;
+}
+
+.footer-nav li a:hover,
+.social-links li a:active{
+    color: #FFF;
+}
+
+footer p{
+    color: #888;
+    font-size: 80%;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.social-links li a{
+    font-size: 160%;
+}
+
+.fa-facebook-f:hover{
+    color: #385aa0;
+}
+
+.fa-youtube:hover{
+    color: #FF0000;
+}
+
+.fa-rss:hover{
+    color: #8bc701;
+}
+
+.fab fa-facebook-f,
+.fab fa-youtube,
+.fas fa-rss{
+    -webkit-transition: color 0.2s;
+    transition: color 0.2S;
+}
+/*.footer-texte{
+    color: #FFF;
+    text-align: center;
+}*/
+
+
+/** Animation **/
+
+/* opaqque à 0(= transparent à 100%)*/
+.js--wp-featurebox,
+.js--wp-step-box,
+.js--responsable-images{
+    opacity: 0;
+    animation-duration: 1s;
+}
+
+.js--plan-box{
+    animation-duration: 1s;
+}
+
+.js--wp-featurebox.animated,
+.js--wp-step-box.animated,
+.js--responsable-images.animated{
+    opacity: 1;
+}
