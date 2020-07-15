@@ -1,1 +1,36 @@
- 
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE install PUBLIC "-//Joomla! 2.5//DTD template 1.0//EN" "https://www.joomla.org/xml/dtd/2.5/template-install.dtd">
+<extension version="3.1" type="template" client="site">
+	<name>FPMA Cergy</name>
+	<version>1.0</version>
+	<creationDate>14/07/2020</creationDate>
+	<author>Patrick Jocelyn ANDRIANIAINA</author>
+	<authorEmail>admin@fpma-cergy.org</authorEmail>
+	<copyright>FPMA Cergy. Tout droits réservés.</copyright>
+	<description>Ce template a été créé pour l'eglise FPMA de Cergy</description>
+    <files>
+		<filename>index.php</filename>
+		<filename>templateDetails.xml</filename>
+		<filename>template_preview.png</filename>
+		<filename>template_thumbnail.png</filename>
+		<folder>css</folder>
+		<folder>html</folder>
+		<folder>images</folder>
+		<folder>img</folder>
+		<folder>less</folder>
+		<folder>resources</folder>
+		<folder>vendor</folder>
+	</files>
+	<positions>
+		<position>nav</position>
+		<position>texte-banner</position>
+		<position>pericope</position>
+		<position>photos-choisies</position>
+		<position>etude-biblique</position>
+		<position>responsables</position>
+		<position>versets-du-mois</position>
+		<position>bureau</position>
+		<position>map</position>
+		<position>footer</position>
+	</positions>
+</extension 

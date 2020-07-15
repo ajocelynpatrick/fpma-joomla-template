@@ -77,14 +77,21 @@ JHtmlBootstrap::loadCss($includeMaincss = true );
                 <jdoc:include type="modules" name="bureau" style="html5" /> 
             </div>
         </section>
+        <!--rajouter l'affichage du component ici -->
+        <section class="section-component js--section-component" id="bible">
+            <div class="row">
+                <jdoc:include type="message" />
+                <jdoc:include type="component" />
+            </div>        
+        </section>
         <!-- maps et formulaire contact -->
         <section class="section-form map-box"> 
             <div class="row">
-                <jdoc:include type="modules" name="" style="html5" /> 
+                <jdoc:include type="modules" name="map" style="html5" /> 
             </div> 
         </section>
         <footer>
-                <jdoc:include type="modules" name="map" style="html5" /> 
+                <jdoc:include type="modules" name="footer" style="html5" /> 
         </footer>
     </body>
 </html>

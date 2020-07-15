@@ -104,3 +104,21 @@ Voici la liste des remplacements :
 ```
 Et pour les autres sections, nous allons modifier également les lignes 53, 58, 62, 66, 70, 74 et 77 (voir les modifications dans le fichier `index.php` dans le repo git)
  
+## 6. Code component
+Pour le moment, notre site n'affiche que des modules mais on sait que l'organe d'affichage principal du site est le component. C'est là que les articles s'affichent. Nous allons donc rajouter une section qui nous permette d'afficher l'unique `component` de notre site ainsi que les messages de joomla. On essayera de le mettre au milieu de toute chose (avant le footer et après le header)
+
+Insérer à la lign 81
+
+``` php
+<section class="section-component js--section-component" id="bible">
+    <div class="row">
+        <jdoc:include type="message" />
+        <jdoc:include type="component" />
+    </div>        
+</section>
+
+```
+## 7. Enrichissement du fichier TemplateDetails 
+Il est temps de déclarer à Joomla les positions que nous avons utilisé dans le fichier `index.php`
+Pour cela nous allons nous inspirer du fichier de `templateDetails.xml` du template `protostar` et nous allons ensuite le modifier.
+
